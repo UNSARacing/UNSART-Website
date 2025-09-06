@@ -7,8 +7,6 @@
     padding: 0;
     background-color: black;
     z-index: 0;
-    min-width: 1920px;    /* minimalna sirina za pixel-perfect alignment */
-    min-height: 1080px;    /* minimalna visina */
 }
 
 /* POZADINSKA SLIKA */

@@ -3,5 +3,7 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
+  min-width: 1920px;  /* minimalna sirina za pixel-perfect alignment */
+  min-height: 1080px; /* minimalna visina za pixel-perfect alignment */
   overflow-x: hidden;
 }
