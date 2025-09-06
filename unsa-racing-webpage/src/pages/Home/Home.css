@@ -1,0 +1,108 @@
+/* GLAVNI KONTEJNER */
+.homeContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    z-index: 0;
+    min-width: 1920px;    /* minimalna sirina za pixel-perfect alignment */
+    min-height: 1080px;    /* minimalna visina */
+}
+
+/* POZADINSKA SLIKA */
+.homeBackgroundImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    z-index: 1;
+}
+
+/* FADE NA VRHU */
+.homeContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 80px; 
+    background: linear-gradient(to bottom, black 100%, transparent 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* DRAGON LOGO */
+.homeDragonLogo {
+    position: absolute;
+    top: 48%;
+    transform: translateY(-50%);
+    width: 1000px;
+    height: 1100px;
+    z-index: 3;
+}
+
+/* AUTO - iznad DRAGON LOGO-a */
+.homeCarImage {
+    position: absolute;
+    bottom: 90px;
+    height: 900px;
+    width: 1100px;
+    transform: rotate(-1deg);
+    z-index: 4;
+}
+
+/* KONTEJNER ZA NASLOV, PODNASLOV I DUGME */
+.homeContent {
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    transform: translateY(-50%);
+    text-align: center;
+    z-index: 5;
+    color: white;
+}
+
+/* NASLOV */
+.homeTitle {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* PODNASLOV */
+.homeSubtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 25px;
+    color: #cccccc;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* DUGME */
+.homeButton {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.homeButton:hover {
+    background-color: #ffcc00;
+    transform: scale(1.05);
+}

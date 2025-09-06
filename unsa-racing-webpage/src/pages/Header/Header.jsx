@@ -19,7 +19,7 @@ const Header = () => {
         <a className="navLink">Subteams</a>
         <a className="navLink">Sponsors</a>
       </nav>
-
+      
     </header>
   )
 }

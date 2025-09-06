@@ -1,19 +1,24 @@
 /* Header container */
 .headerDiv {
   display: flex;
-  height: 150px;
+  width: 100%;
+  height: 80px;
   align-items: center;
   padding: 10px 30px;
   gap: 5%;
   background: linear-gradient(to bottom, black 71%, rgba(0,0,0,0) 100%);
   user-select: none;
+  position: absolute; /* da se preklopi preko slike */
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
 /* Logo */
 .headerLogo {
   width: 49px;
   height: 74px;
-  flex-shrink: 0; /* ne dozvoli da se smanji */
+  flex-shrink: 0; /* ne dozvoli da se smanji logo */
 }
 
 /* Logo link da nema underline */
@@ -21,11 +26,11 @@
   text-decoration: none;
 }
 
-/* Navigacija linkovi */
+/* Navbar */
 .headerLinks {
   display: flex;
   flex-wrap: nowrap;
-  gap: 25px;          /* razmak između linkova */
+  gap: 25px;          /* Space between */
 }
 
 .navLink {
@@ -37,8 +42,4 @@
   font-weight: bold;
   cursor: pointer;    /* ruka */ 
   transition: color 0.2s;
-}
-
-.navLink:first-child {
-  margin-left: 0; /* prvi link nema marginu */
 }
