@@ -6,64 +6,78 @@
     margin: 0;
     padding: 0;
     background-color: black;
+    overflow-x: hidden;
     z-index: 0;
-     min-width: 1920px;  /* minimalna sirina za pixel-perfect alignment */
-  min-height: 1080px; /* minimalna visina za pixel-perfect alignment */
+}
+
+.homeContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to left bottom,
+    rgba(0,0,0,0.7) 25%,      
+    rgba(0,0,0,0.5) 40%,     
+    rgba(0,0,0,0.3) 55%,     
+    rgba(0,0,0,0.1) 60%,     
+    transparent 100%         
+  );
+  z-index: 2;
+  pointer-events: none;
 }
 
 /* POZADINSKA SLIKA */
 .homeBackgroundImage {
     position: absolute;
-    top: 50%;
+    top: -10%;
     left: 50%;
-    transform: translate(-50%, -50%); 
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
-    object-position: center;
-    display: block;
+    transform: translateX(-50%);
+    width: 100%;          /* zauzima celu širinu ekrana */
+    height: auto;          /* visina se prilagođava proporcijama */
+    object-fit: contain;   /* cela slika vidljiva, nema sečenja */
+    object-position: top center; /* slika se poravnava gore i centrirano */
     z-index: 1;
+    display: block;        /* uklanja default inline gap */
 }
 
-/* FADE NA VRHU */
-.homeContainer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 80px; 
-    background: linear-gradient(to bottom, black 100%, transparent 100%);
-    pointer-events: none;
-    z-index: 2;
+/* KONTEJNER */
+.homeLogoGroup {
+    position: relative;
+    top: 0%;
+    width: 55%;
+    height: auto;   /* fleksibilno */
+    z-index: 3;
 }
 
 /* DRAGON LOGO */
 .homeDragonLogo {
-    position: absolute;
-    top: 48%;
-    transform: translateY(-50%);
-    width: 1000px;
-    height: 1100px;
-    z-index: 3;
+    width: 100%;
+    height: auto;
+    display: block;   /* da zauzima punu širinu */
+    position: relative; /* ovo je ključno da car vezujemo za njega */
+    z-index: 1;
 }
 
-/* AUTO - iznad DRAGON LOGO-a */
+/* AUTO */
 .homeCarImage {
     position: absolute;
-    bottom: 90px;
-    height: 900px;
-    width: 1100px;
-    transform: rotate(-1deg);
-    z-index: 4;
+    bottom: 20%;  /* sada se veže unutar dragon-a */
+    left: 50%;
+    transform: translateX(-50%) rotate(-1deg);
+    width: 90%;
+    height: auto;
+    z-index: 2;
 }
+
 
 /* KONTEJNER ZA NASLOV, PODNASLOV I DUGME */
 .homeContent {
     position: absolute;
     top: 50%;
-    right: 60px;
+    right: 15%;
     transform: translateY(-50%);
     text-align: center;
     z-index: 5;
@@ -72,19 +86,29 @@
 
 /* NASLOV */
 .homeTitle {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 15px;
+    font-family: 'Teko', sans-serif;
+    font-weight: 400;   /* Regular */
+    font-size: 96px;    /* kao u slici */
+    line-height: 100%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    margin: 10px 0;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    z-index : 5;
 }
 
 /* PODNASLOV */
 .homeSubtitle {
-    font-size: 1.2rem;
-    font-weight: 300;
-    margin-bottom: 25px;
-    color: #cccccc;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;   /* Light */
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 10px 0 30px;
+    color: #ccc;    
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    z-index : 5;
 }
 
 /* DUGME */
@@ -100,9 +124,9 @@
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
+    z-index : 5;
 }
 
 .homeButton:hover {
     background-color: #ffcc00;
-    transform: scale(1.05);
 }
