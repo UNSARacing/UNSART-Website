@@ -1,7 +1,17 @@
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
   overflow-x: hidden;
+  user-select: none;
+}
+
+/* Spriječava povlačenje slika i drugih elemenata */
+img, a, video {
+  pointer-events: auto; /* ostavi interakciju ako treba */
+  -webkit-user-drag: none;
+}
+
+/* Spriječava desni klik (opcionalno) */
+body {
+  -webkit-touch-callout: none; /* za iOS */
 }
