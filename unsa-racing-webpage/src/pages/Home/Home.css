@@ -2,7 +2,7 @@
 .homeContainer {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     margin: 0;
     padding: 0;
     background-color: black;
@@ -76,8 +76,8 @@
 /* KONTEJNER ZA NASLOV, PODNASLOV I DUGME */
 .homeContent {
     position: absolute;
-    top: 50%;
-    right: 15%;
+    top: 25%;
+    right: 10%;
     transform: translateY(-50%);
     text-align: center;
     z-index: 5;
@@ -129,4 +129,48 @@
 
 .homeButton:hover {
     background-color: #ffcc00;
+}
+
+.infoContainer {
+    position: relative;
+    width: 100%;
+    height: auto; /* neka raste sa sadržajem */
+    display: flex;
+    flex-direction: column; /* da ide jedan ispod drugog */
+    gap: 60px; /* razmak između sekcija */
+    padding: 40px;
+    top: -50%;
+    z-index: 2;
+}
+
+/* POZADINSKA SLIKA */
+.teamBackgroundImage {
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;          /* zauzima celu širinu ekrana */
+    height: auto;          /* visina se prilagođava proporcijama */
+    object-fit: contain;   /* cela slika vidljiva, nema sečenja */
+    object-position: top center; /* slika se poravnava gore i centrirano */
+    z-index: 1;
+    display: block;        /* uklanja default inline gap */
+}
+
+.teamInfo {
+    display: flex;
+    gap: 40px;
+    background: lightblue;
+    padding: 20px;
+    z-index: 2;
+    margin: 0 5%;
+}
+
+.fsInfo {
+    display: flex;
+    gap: 40px;
+    background: red;
+    padding: 20px;
+    margin: 15% 5%;
+    z-index: 2;
 }
