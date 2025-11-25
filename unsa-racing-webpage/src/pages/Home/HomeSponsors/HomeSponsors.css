@@ -1,0 +1,88 @@
+/* HomeSponsors.css */
+
+.sponsors-section {
+  padding: 5rem 0;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.sponsors-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sponsors-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.sponsors-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 3rem;
+}
+
+.sponsor-logo {
+  height: 5rem;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.sponsor-logo:hover {
+  opacity: 1;
+}
+
+.sponsors-cta {
+  text-align: center;
+}
+
+.sponsors-text {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.learn-more-btn {
+  background-color: white;
+  color: black;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.learn-more-btn:hover {
+  background-color: #e5e7eb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sponsors-title {
+    font-size: 2rem;
+  }
+
+  .sponsors-logos {
+    gap: 2rem;
+  }
+
+  .sponsor-logo {
+    height: 3.5rem;
+  }
+
+  .sponsors-text {
+    font-size: 0.875rem;
+  }
+}

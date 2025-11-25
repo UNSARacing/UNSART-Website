@@ -1,4 +1,6 @@
 import Hero from './Hero/Hero.jsx'
+import Team from './Team/Team.jsx'
+import HomeSponsors from './HomeSponsors/HomeSponsors.jsx'
 
 const Home = () => {
 
@@ -17,9 +19,17 @@ Our involvement in the competition complements classroom learning by offering st
 Through participation in Formula Student, students enhance their problem-solving abilities, critical thinking skills, and technical expertise.`;
 
     return (
-        <>
-        <Hero/>
-        </>
+       <>
+            <div style={{ position: 'relative', zIndex: 1 }}>
+                <Hero />
+            </div>
+            <div style={{ position: 'relative', zIndex: 2 }}>
+                <Team />
+            </div>
+            <div style={{ position: 'relative', zIndex: 3 }}>
+                <HomeSponsors />
+            </div>
+       </>
     );
 }
 

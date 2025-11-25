@@ -1,0 +1,230 @@
+/* RESET ZA BODY I HTML */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 80px;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* TEAM SECTION */
+.team-section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: #fff;
+  padding: 80px 0;
+  width: 100vw;
+  margin-top: 100px;
+  box-sizing: border-box;
+}
+
+/* GLAVNI RED */
+.section-row {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  gap: 40px;
+  padding: 0 60px;
+}
+
+/* CONTENT LEFT */
+.content-left {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 60px 40px 0;
+}
+
+/* CONTENT RIGHT */
+.content-right {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0 40px 60px;
+}
+
+/* VERTIKALNA ISPREKIDANA LINIJA */
+.vertical-dashed-line {
+  position: relative;
+  width: 2px;
+  background-image: linear-gradient(to bottom, #888 50%, transparent 50%);
+  background-size: 2px 16px;
+  background-repeat: repeat-y;
+}
+
+.vertical-dashed-line::before,
+.vertical-dashed-line::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border: 2px solid #888;
+  border-radius: 50%;
+}
+
+.vertical-dashed-line::before {
+  top: -17px;
+  background: transparent;
+}
+
+.vertical-dashed-line::after {
+  bottom: -10px;
+  background: transparent;
+}
+
+/* INFO CONTENT */
+.info-content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+}
+
+.info-title {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* BUTTON */
+.info-cta-button {
+  margin-top: 20px;
+  padding: 14px 32px;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+
+.info-cta-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* INFO IMAGE */
+.info-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.car-photo {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  object-fit: cover;
+}
+
+/* TEAM TEXT */
+.team-text-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+}
+
+.team-title {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.team-cta-button {
+  margin-top: 20px;
+  padding: 14px 32px;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+
+.team-cta-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* TEAM IMAGE */
+.team-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.team-photo {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  border: 3px solid #444;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .section-row {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .vertical-dashed-line {
+    display: none;
+  }
+
+  .content-left,
+  .content-right {
+    padding: 40px;
+  }
+
+  .team-title,
+  .info-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-section {
+    padding: 40px 0;
+  }
+
+  .section-row {
+    padding: 0 30px;
+  }
+
+  .content-left,
+  .content-right {
+    padding: 20px;
+  }
+
+  .team-title,
+  .info-title {
+    font-size: 28px;
+  }
+}

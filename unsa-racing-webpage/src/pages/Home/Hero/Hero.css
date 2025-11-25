@@ -5,21 +5,23 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    overflow: visible;
     background: #000;
 }
 
-/* Background Image */
 .homeBackgroundImage {
-    position: absolute;
     inset: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: 100px;
     object-fit: cover;
-    z-index: 1;
+    object-position: top; /* važan dio */
+    z-index: 1; /* ako želiš da bude iza cijelog sadržaja */
+    overflow: visible;
 }
 
 /* Dark overlay */
+/*
 .homeContainer::after {
     content: "";
     position: absolute;
@@ -29,7 +31,7 @@
         rgba(0,0,0,0.85) 0%,
         rgba(0,0,0,0.65) 45%,
         rgba(0,0,0,0.35) 70%,
-        rgba(0,0,0,0.2) 100%
+        rgba(0,0,0,0.2) 100%,
     );
     z-index: 3;
 }
@@ -70,7 +72,7 @@
 =========================== */
 .homeContent {
     position: absolute;
-    right: 10%;            /* pomjereno malo prema centru */
+    right: 15%;            /* pomjereno malo prema centru */
     top: 35%;              /* precizniji vertikalni položaj */
     display: flex;
     flex-direction: column;
@@ -138,26 +140,27 @@
 }
 
 .hoverImage {
-  position: fixed;        /* fiksno u viewportu, nezavisno od scrolla */
-  top: 1%;                 /* od vrha ekrana */
-  left: 65%;              /* centrirano horizontalno */
-  
-  width: auto;            /* širina automatska */
-  height: 100vh;          /* visina cijelog viewporta */
-  max-width: 1200px;      /* opcionalno ograničenje širine */
-  
-  object-fit: cover;      /* pokriva cijeli prostor bez istezanja */
-  opacity: 0;             /* startna nevidljivost */
-  transition: opacity 0.5s ease;
-  pointer-events: none;   /* ne ometa klikove */
-  z-index: 0;             /* ispod dugmeta */
-}
+    position: absolute;
 
-.HomeButtonWrapper:hover .hoverImage {
-  opacity: 0.5;           /* pojavi se kad hoveraš dugme */
-}
+    width: 65%;
+    height: auto;
+    object-fit: cover;
+    object-position: center center;
 
+    transform: translateY(-30%);
 
-.HomeButtonWrapper:hover .hoverImage {
-  opacity: 0.5;           /* pojavljuje se kad hoveraš dugme */
+    opacity: 0.50;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    overflow-y: hidden;
+    z-index: 0;
+
+    /* mask ako želiš da ostane */
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.75) 45%,    /* vrh – 75% vidljivo */
+        rgba(0,0,0,0.50) 50%,    /* vrh – 75% vidljivo */
+        rgba(0,0,0,0.25) 55%,   /* 25% – 25% vidljivo */
+        rgba(0,0,0,0.01) 100%   /* dno – 75% vidljivo */
+    );
 }

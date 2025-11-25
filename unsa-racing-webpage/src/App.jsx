@@ -17,7 +17,9 @@ function App() {
          <Route path='/sponsors' element={<Sponsors />} />
       </Routes >
     </Router>
-    <Footer />
+    <div style={{ position: 'relative', zIndex: 4 }}>
+      <Footer/>
+    </div>
     </>
   )
 }
