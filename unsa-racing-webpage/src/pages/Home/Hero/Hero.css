@@ -164,3 +164,15 @@
         rgba(0,0,0,0.01) 100%   /* dno – 75% vidljivo */
     );
 }
+
+/* Za ekrane manje od 1600px */
+@media (max-width: 1600px) {
+    .homeContent {
+        right: 5%;
+        top: 32%;     /* malo više prema gore */
+    }
+
+    .heroVisual {
+        width: 50%;   /* malo manje da ostane prostora */
+    }
+}
