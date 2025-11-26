@@ -47,6 +47,10 @@
   margin: 0 auto;
 }
 
+.footer-section {
+  text-align: center;
+}
+
 .footer-section h4 {
   font-weight: 600;
   margin-bottom: 0.75rem;
