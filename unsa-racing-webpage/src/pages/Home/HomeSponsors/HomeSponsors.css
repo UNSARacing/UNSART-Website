@@ -4,6 +4,7 @@
   padding: 5rem 0;
   position: relative;
   overflow-y: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
 .sponsors-container {
@@ -13,8 +14,9 @@
 }
 
 .sponsors-title {
+  font-family: 'Teko', sans-serif;
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 400;
   color: white;
   text-align: center;
   margin-bottom: 4rem;

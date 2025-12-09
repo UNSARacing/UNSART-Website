@@ -1,8 +1,20 @@
+:root {
+  --bg-primary: #1A1D1F;
+  --bg-secondary: #25282B;
+  --bg-tertiary: #2E3235;
+  --bg-card: #1F2224;
+  --bg-card-hover: #25282B;
+  --bg-footer: #0F1113;
+  --border-color: #2E3235;
+}
+
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   user-select: none;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-primary);
 }
 
 /* Spriječava povlačenje slika i drugih elemenata */

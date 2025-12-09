@@ -5,14 +5,21 @@
   width: 100%;
   padding: 10px 30px;
   gap: 5%;
-  background: linear-gradient(to bottom, black 71%, rgba(0,0,0,0) 100%);
+  background: transparent;
   user-select: none;
-  position: absolute; /* da se preklopi preko slike */
+  position: fixed; /* Changed from absolute to fixed for better scroll behavior */
   top: 0;
   left: 0;
   z-index: 10;
-  height: auto;        /* prilagođava se sadržaju */
-  min-height: 10%;    /* da ne bude prenizak */
+  height: auto;
+  min-height: 10%;
+  transition: background 0.3s ease;
+}
+
+/* Header when scrolled */
+.headerDiv.scrolled {
+  background: var(--bg-primary);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Logo */
@@ -41,12 +48,17 @@
 .navLink {
   display: block;
   flex-shrink: 0;     /* linkovi se ne smanjuju */
-  color: white;
+  color: #999;        /* Light gray for inactive links */
   text-decoration: none;
+  font-family: 'Poppins', sans-serif;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;    /* ruka */
   transition: color 0.2s;
+}
+
+.navLink.active {
+  color: white;       /* White for active link */
 }
 
 .navLink:hover {
