@@ -10,14 +10,24 @@
 }
 
 .homeBackgroundImage {
+    position: absolute;
     inset: 0;
     width: 100%;
-    height: auto;
-    max-height: 100px;
+    height: 100%;
     object-fit: cover;
-    object-position: top; /* važan dio */
-    z-index: 1; /* ako želiš da bude iza cijelog sadržaja */
-    overflow: visible;
+    object-position: center center;
+    z-index: 1;
+}
+
+.homeForegroundImage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 10;
+    pointer-events: none;
 }
 
 /* Dark overlay */
@@ -72,21 +82,23 @@
 =========================== */
 .homeContent {
     position: absolute;
-    right: 15%;            /* pomjereno malo prema centru */
-    top: 35%;              /* precizniji vertikalni položaj */
+    right: 2%;            /* pushed more to the right */
+    top: 20%;
     display: flex;
     flex-direction: column;
-    align-items: center;   /* centrirano horizontalno */
-    text-align: center;    /* tekst centriran */
+    align-items: center;
+    text-align: center;
     z-index: 5;
     color: white;
+    max-width: 500px;     /* narrower content */
+    width: 100%;
 }
 
 /* NASLOV */
 .homeTitle {
-    font-family: 'Teko', sans-serif;
-    font-weight: 400;   /* Regular */
-    font-size: 96px;    /* kao u slici */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 72px;    /* smaller font */
     line-height: 100%;
     letter-spacing: 0;
     text-transform: uppercase;
@@ -98,8 +110,8 @@
 /* PODNASLOV */
 .homeSubtitle {
     font-family: 'Poppins', sans-serif;
-    font-weight: 300;   /* Light */
-    font-size: 24px;
+    font-weight: 300;
+    font-size: 18px;    /* smaller font */
     line-height: 100%;
     letter-spacing: 0;
     text-align: center;
@@ -149,7 +161,7 @@
 
     transform: translateY(-30%);
 
-    opacity: 0.50;
+    opacity: 1;         /* full opacity */
     pointer-events: none;
     transition: opacity 0.4s ease;
     overflow-y: hidden;

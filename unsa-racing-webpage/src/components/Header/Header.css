@@ -2,10 +2,10 @@
 .headerDiv {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   padding: 10px 30px;
-  gap: 5%;
-  background: transparent;
+  background: linear-gradient(to bottom, rgba(26, 29, 31, 0.25) 0%, rgba(220, 221, 225, 0) 100%);
   user-select: none;
   position: fixed; /* Changed from absolute to fixed for better scroll behavior */
   top: 0;
@@ -24,9 +24,8 @@
 
 /* Logo */
 .headerLogo {
-  margin-left: 50%;
   height: 100%;       /* zauzima visinu headera */
-  width: 100%;        /* proporcionalno */
+  width: auto;        /* proporcionalno */
   max-height: 60px;   /* ograničenje da ne bude prevelik */
 }
 
@@ -55,12 +54,48 @@
   font-weight: bold;
   cursor: pointer;    /* ruka */
   transition: color 0.2s;
+  position: relative; /* Needed for absolute positioning of pseudo-element */
+  padding-bottom: 5px; /* Space for the underline */
 }
 
 .navLink.active {
   color: white;       /* White for active link */
 }
 
+/* Gradient Underline for Active Link */
+.navLink.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #0047AB 33%, #FFFFFF 33%, #FFFFFF 66%, #FFD700 66%);
+}
+
+.headerDiv.is-home:not(.scrolled) .navLink.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: #ffffff;
+}
+
 .navLink:hover {
   color: #FFD700;     /* hover efekat */
+}
+
+/* Home Top State (Transparent/Gradient Background) */
+/* Home Top State (Transparent/Gradient Background) */
+.headerDiv.is-home:not(.scrolled) .navLink.active {
+  /* Underline is handled by pseudo-element now */
+  color: #ffffff;
+  text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.5); /* Improved contrast */
+}
+
+.headerDiv.is-home:not(.scrolled) .navLink:not(.active) {
+  color: #dddddd; /* Brighter, almost white for better visibility against hero */
+  text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.5); /* Improved contrast */
 }

@@ -6,11 +6,17 @@ const Hero = () => {
 
             <img
                 className="homeBackgroundImage"
-                src="../src/assets/Home/garage.svg"
+                src="../src/assets/Home/vfsaa livery image.webp"
                 alt="Garage"
             />
+            
+            <img
+                className="homeForegroundImage"
+                src="../src/assets/Home/vfsaa livery image transparent.webp"
+                alt="Car Foreground"
+            />
 
-            <div className="heroVisual">
+            {/* <div className="heroVisual">
                 <img 
                     className="dragon"
                     src="../src/assets/Home/dragon.svg"
@@ -22,7 +28,7 @@ const Hero = () => {
                     src="../src/assets/Home/car.svg"
                     alt="Car"
                 />
-            </div>
+            </div> */}
 
             <div className="homeContent">
                 <h1 className="homeTitle">UNSA RACING TEAM</h1>

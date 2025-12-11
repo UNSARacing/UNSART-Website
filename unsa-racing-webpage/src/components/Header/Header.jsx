@@ -33,7 +33,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`headerDiv ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`headerDiv ${isScrolled ? 'scrolled' : ''} ${location.pathname === '/' ? 'is-home' : ''}`}>
       {/* Logo */}
       <Link to="/" className="logoLink">
         <img
