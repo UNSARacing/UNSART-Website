@@ -47,7 +47,7 @@ const Header = () => {
       <nav className="headerLinks">
         <Link to="/" className={`navLink ${isActive('/') ? 'active' : ''}`}>Home</Link>
         <Link to="/news" className={`navLink ${isActive('/news') ? 'active' : ''}`}>News</Link>
-        <Link to="/subteams" className={`navLink ${isActive('/subteams') ? 'active' : ''}`}>Subteams</Link>
+        <Link to="/our-team" className={`navLink ${isActive('/our-team') ? 'active' : ''}`}>Our Team</Link>
         <Link to="/sponsors" className={`navLink ${isActive('/sponsors') ? 'active' : ''}`}>Sponsors</Link>
       </nav>
       
