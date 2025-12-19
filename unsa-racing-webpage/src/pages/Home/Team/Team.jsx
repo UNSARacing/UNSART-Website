@@ -12,14 +12,14 @@ const Team = () => {
           <div className="content-left">
             <div className="team-image-container">
               <img 
-                src="../src/assets/Home/team-photo.jpg"
+                src="../src/assets/Home/team-photo2.jpg"
                 alt="UNSA Racing Team"
                 className="team-photo"
               />
             </div>
 
             <div className="team-text-container">
-              <h2 className="team-title">THE TEAM</h2>
+              <h2 className="title">THE TEAM</h2>
               <p>
                 The UNSA Racing Team is a Formula Student team situated at the University of 
                 Sarajevo. Founded in 2024, our team consists of passionate students driven by 
@@ -29,7 +29,6 @@ const Team = () => {
                 Our involvement in the competition complements classroom learning by offering 
                 students the opportunity to apply theoretical concepts in a real-world environment.
               </p>
-              <button className="team-cta-button">About Formula Student</button>
             </div>
           </div>
 
@@ -39,7 +38,7 @@ const Team = () => {
           {/* DESNI DIO — tekst gore + slika dole */}
           <div className="content-right">
             <div className="info-content">
-              <h2 className="info-title">WHAT IS FORMULA STUDENT?</h2>
+              <h2 className="title">WHAT IS FORMULA STUDENT?</h2>
               <p>
                 Formula Student is an international engineering competition where students 
                 design, build, and race a single-seat formula-style race car.
@@ -48,7 +47,6 @@ const Team = () => {
                 Students learn design optimization, manufacturing, project management, testing,
                 and technical presentations.
               </p>
-              <button className="info-cta-button">Our Sponsors</button>
             </div>
 
             <div className="info-image-container">

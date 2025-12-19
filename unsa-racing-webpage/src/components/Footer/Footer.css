@@ -79,6 +79,27 @@
   margin: 0;
 }
 
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-link {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+.footer-link:visited {
+  color: #9ca3af;
+}
+
 .footer-socials {
   display: flex;
   gap: 1rem;

@@ -82,8 +82,8 @@
 =========================== */
 .homeContent {
     position: absolute;
-    right: 2%;            /* pushed more to the right */
-    top: 20%;
+    right: 4%;            /* pushed more to the right */
+    top: 22%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,7 +97,7 @@
 /* NASLOV */
 .homeTitle {
     font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 72px;    /* smaller font */
     line-height: 100%;
     letter-spacing: 0;
@@ -177,14 +177,83 @@
     );
 }
 
-/* Za ekrane manje od 1600px */
+/* For ekrane manje od 1600px */
 @media (max-width: 1600px) {
     .homeContent {
         right: 5%;
-        top: 32%;     /* malo više prema gore */
+        top: 22%;     /* malo više prema gore */
     }
 
     .heroVisual {
         width: 50%;   /* malo manje da ostane prostora */
+    }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .homeContainer {
+        height: 100vh;
+    }
+
+    .homeBackgroundImage,
+    .homeForegroundImage {
+        object-fit: cover;
+        object-position: center center;
+        top: 0;
+        height: 100vh;
+    }
+
+    .homeContent {
+        right: 50%;
+        transform: translateX(50%);
+        top: 20%;
+        max-width: 90%;
+    }
+
+    .homeTitle {
+        font-size: 48px;
+    }
+
+    .homeSubtitle {
+        font-size: 16px;
+    }
+
+    .hoverImage {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .homeContainer {
+        height: 100vh;
+    }
+
+    .homeBackgroundImage,
+    .homeForegroundImage {
+        object-fit: cover;
+        object-position: 70% center;
+        top: 0;
+        height: 100vh;
+    }
+
+    .homeContent {
+        top: 17%;
+    }
+
+    .homeTitle {
+        font-size: 48px;
+    }
+
+    .homeSubtitle {
+        font-size: 14px;
+    }
+
+    .homeButton {
+        font-size: 1.2rem;
+        padding: 12px 0;
+    }
+
+    .hoverImage {
+        width: 85%;
     }
 }

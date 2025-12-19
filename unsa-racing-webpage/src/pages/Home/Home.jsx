@@ -1,6 +1,6 @@
 import Hero from './Hero/Hero.jsx'
 import Team from './Team/Team.jsx'
-import HomeSponsors from './HomeSponsors/HomeSponsors.jsx'
+import HomeSocials from './HomeSocials/HomeSocials.jsx'
 import './Home.css'
 
 const Home = () => {
@@ -29,7 +29,7 @@ Through participation in Formula Student, students enhance their problem-solving
                     <Team />
                 </div>
                 <div style={{ position: 'relative', zIndex: 3 }}>
-                    <HomeSponsors />
+                    <HomeSocials />
                 </div>
             </div>
        </>

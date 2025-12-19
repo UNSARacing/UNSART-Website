@@ -1,4 +1,5 @@
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -22,31 +23,17 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Location</h4>
             <p className="footer-location">
-              University Campus, Sarajevo<br />
-              Faculty of Mechanical Engineering
+              Udruženje studenata Univerziteta u Sarajevu "UNSA RT"<br />
+              Vilsonovo šetalište 9<br />
+              71000 Sarajevo
             </p>
           </div>
 
           <div className="footer-section">
-            <h4>Socials</h4>
-            {/*<div className="footer-socials">
-              <a 
-                href="https://instagram.com/unsaracing" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="social-link"
-              >
-                <Instagram size={20} />
-              </a>
-              <a 
-                href="https://facebook.com/unsaracing" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="social-link"
-              >
-                <Facebook size={20} />
-              </a>
-            </div> */}
+            <h4>Legal</h4>
+            <div className="footer-links">
+               <Link to="/impressum" className="footer-link">Impressum</Link>
+            </div>
           </div>
         </div>
 

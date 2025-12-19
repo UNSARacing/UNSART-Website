@@ -52,6 +52,26 @@
   }
 }
 
+@media (max-width: 768px) {
+  .our-team-container h1 {
+    font-size: 3rem;
+  }
+
+  .subteam-section h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .our-team-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .subteam-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
 .member-card {
   display: flex;
   flex-direction: column;

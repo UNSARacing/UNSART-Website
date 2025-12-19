@@ -22,9 +22,6 @@ const News = () => {
       <div className="news-container">
         <header className="news-header">
           <h1 className="news-page-title">News & Updates</h1>
-          <p className="news-page-subtitle">
-            Stay up to date with the latest news from UNSA Racing Team
-          </p>
         </header>
 
         <div className="blog-posts-list">

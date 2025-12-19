@@ -16,28 +16,8 @@ const Hero = () => {
                 alt="Car Foreground"
             />
 
-            {/* <div className="heroVisual">
-                <img 
-                    className="dragon"
-                    src="../src/assets/Home/dragon.svg"
-                    alt="Dragon"
-                />
-
-                <img 
-                    className="car"
-                    src="../src/assets/Home/car.svg"
-                    alt="Car"
-                />
-            </div> */}
-
             <div className="homeContent">
                 <h1 className="homeTitle">UNSA RACING TEAM</h1>
-                <p className="homeSubtitle">Engineering innovation. Driving Passion.</p>
-
-                {/* BUTTON */}
-                <div className="HomeButtonWrapper">
-                    <button className="homeButton">Meet the Team</button>
-                </div>
 
                 {/* OVO MORA BITI POSLIJE WRAPPERA */}
                 <img

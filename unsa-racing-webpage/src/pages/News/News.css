@@ -12,9 +12,6 @@
 
 .news-header {
   text-align: center;
-  margin-bottom: 60px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid var(--border-color);
 }
 
 .news-page-title {
@@ -23,14 +20,8 @@
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 20px;
+  margin-top: 30px;
   color: #fff;
-}
-
-.news-page-subtitle {
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  color: #ccc;
-  font-weight: 300;
 }
 
 .blog-posts-list {
@@ -41,78 +32,75 @@
 }
 
 .blog-post-card {
-  background-color: var(--bg-card);
-  border-radius: 8px;
-  border: 1px solid var(--bg-tertiary);
   display: flex;
   flex-direction: row;
-  overflow: hidden;
+  gap: 40px;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   cursor: pointer;
+  padding: 60px 0 40px 0;
+  position: relative; /* For the tri-color line */
 }
 
-.blog-post-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15);
-  border-color: var(--bg-secondary);
-  background-color: var(--bg-card-hover);
+.blog-post-card::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 20%;
+  height: 3px;
+  background: linear-gradient(90deg, #016FAA 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #DDBF01 66.66%);
+}
+
+.blog-post-card:first-child {
+  margin-top: 20px;
 }
 
 .post-image-container {
   flex-shrink: 0;
-  width: 300px;
-  height: 200px;
+  width: 400px;
+  height: 250px;
   overflow: hidden;
-  background-color: var(--bg-tertiary);
 }
 
 .post-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.blog-post-card:hover .post-image {
-  transform: scale(1.05);
 }
 
 .post-content {
   flex: 1;
-  padding: 30px 40px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .post-title {
   font-family: 'Poppins', sans-serif;
-  font-size: 36px;
-  font-weight: 400;
+  font-size: 32px;
+  font-weight: 600;
   line-height: 1.2;
   margin: 0 0 10px 0;
   text-transform: uppercase;
   color: #fff;
-  transition: color 0.3s ease;
-}
-
-.blog-post-card:hover .post-title {
-  color: #FFD700;
 }
 
 .post-date {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
-  color: #999;
+  color: #FFD700;
   margin-bottom: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .post-excerpt {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #ccc;
+  color: #eee;
   margin: 0;
   flex-grow: 1;
 }
@@ -128,7 +116,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .news-page {
-    padding: 100px 15px 60px;
+    padding: 100px 10px 60px;
   }
 
   .news-page-title {
@@ -141,6 +129,12 @@
 
   .blog-post-card {
     flex-direction: column;
+    gap: 20px;
+    padding: 30px 0;
+  }
+
+  .blog-post-card::after {
+    width: 33.33%;
   }
 
   .post-image-container {
@@ -148,12 +142,8 @@
     height: 250px;
   }
 
-  .post-content {
-    padding: 25px;
-  }
-
   .post-title {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .post-excerpt {

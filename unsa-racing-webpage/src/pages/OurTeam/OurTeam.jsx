@@ -3,7 +3,7 @@ import Papa from 'papaparse';
 import teamCsv from '../../assets/OurTeam/Website 25_26_ListaClanova - Clanovi.csv?url';
 import './OurTeam.css';
 
-const images = import.meta.glob('../../assets/OurTeam/images/*.jpg', { eager: true });
+const images = import.meta.glob('../../assets/OurTeam/images/*.{jpg,webp}', { eager: true });
 
 const Subteams = () => {
   const [teamData, setTeamData] = useState({});
@@ -52,14 +52,27 @@ const Subteams = () => {
           });
         });
 
-        // Create "Team Management" section using duplicates of Directors
-        const directors = results.data.filter(member => 
-          (member['Uloga'] || '').toLowerCase().includes('director')
-        );
+        // Create "Team Management" section using duplicates of Directors and Presidents
+        const management = results.data.filter(member => {
+          const role = (member['Uloga'] || '').toLowerCase();
+          return role.includes('director') || role.includes('president');
+        });
+
+        // Sort management: President first
+        management.sort((a, b) => {
+          const roleA = (a['Uloga'] || '').toLowerCase();
+          const roleB = (b['Uloga'] || '').toLowerCase();
+          const isPresidentA = roleA.includes('president');
+          const isPresidentB = roleB.includes('president');
+
+          if (isPresidentA && !isPresidentB) return -1;
+          if (!isPresidentA && isPresidentB) return 1;
+          return 0;
+        });
 
         const finalData = {};
-        if (directors.length > 0) {
-          finalData['Team Management'] = directors;
+        if (management.length > 0) {
+          finalData['Team Management'] = management;
         }
 
         // Merge with existing groups (Team Management first)
@@ -74,13 +87,13 @@ const Subteams = () => {
   }, []);
 
   const getMemberImage = (name) => {
-    if (!name) return images['../../assets/OurTeam/images/default.jpg']?.default;
+    if (!name) return images['../../assets/OurTeam/images/default.webp']?.default;
     
     // Convert name "Name Surname" to "Name-Surname.jpg"
     const filename = name.trim().replace(/\s+/g, '-') + '.jpg';
     const path = `../../assets/OurTeam/images/${filename}`;
     
-    return images[path]?.default || images['../../assets/OurTeam/images/default.jpg']?.default;
+    return images[path]?.default || images['../../assets/OurTeam/images/default.webp']?.default;
   };
 
   return (
@@ -98,7 +111,7 @@ const Subteams = () => {
                     alt={member['Ime i Prezime']} 
                     onError={(e) => {
                       // Fallback if the image fails to load for reason other than missing key
-                      e.target.src = images['../../assets/OurTeam/images/default.jpg']?.default;
+                      e.target.src = images['../../assets/OurTeam/images/default.webp']?.default;
                     }}
                   />
                 </div>

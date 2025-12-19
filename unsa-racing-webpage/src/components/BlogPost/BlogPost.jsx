@@ -46,7 +46,6 @@ const BlogPost = () => {
         <div className="blog-error">
           <h2>Post Not Found</h2>
           <p>The blog post you're looking for doesn't exist.</p>
-          <Link to="/news" className="back-link">← Back to News</Link>
         </div>
       </div>
     );
@@ -64,18 +63,26 @@ const BlogPost = () => {
   return (
     <div className="blog-post-container">
       <div className="blog-post-content">
-        <Link to="/news" className="back-link">← Back to News</Link>
-        
         <article className="blog-post-article">
-          <header className="blog-post-header">
-            {post.category && (
-              <span className="blog-category">{post.category}</span>
-            )}
-            <h1 className="blog-post-title">{post.title}</h1>
-            <div className="blog-post-meta">
+          {post.image && (
+            <div className="blog-post-featured-image">
+              <img src={post.image} alt={post.title} />
+            </div>
+          )}
+
+          <div className="blog-post-meta-new">
+            <div className="meta-item">
+              <span className="square yellow-square"></span>
               <span className="blog-date">{formatDate(post.date)}</span>
+            </div>
+            <div className="meta-item">
+              <span className="square blue-square"></span>
               <span className="blog-author">By {post.author}</span>
             </div>
+          </div>
+
+          <header className="blog-post-header">
+            <h1 className="blog-post-title">{post.title}</h1>
           </header>
 
           <div className="blog-post-body">

@@ -10,73 +10,74 @@
   margin: 0 auto;
 }
 
-.back-link {
-  display: inline-block;
-  color: #ccc;
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  margin-bottom: 40px;
-  transition: color 0.3s ease;
+
+.blog-post-article {
+  background-color: transparent;
+  padding: 0;
 }
 
-.back-link:hover {
+.blog-post-featured-image {
+  width: 100%;
+  max-height: 600px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.blog-post-featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-post-meta-new {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
   color: #fff;
 }
 
-.blog-post-article {
-  background-color: var(--bg-card);
-  border-radius: 8px;
-  padding: 60px;
+.square {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+}
+
+.yellow-square {
+  background-color: #FFD700;
+}
+
+.blue-square {
+  background-color: #016FAA;
 }
 
 .blog-post-header {
-  margin-bottom: 40px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.blog-category {
-  display: inline-block;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: #FFD700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .blog-post-title {
   font-family: 'Poppins', sans-serif;
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 1.2;
-  margin: 20px 0;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0;
   text-transform: uppercase;
   color: #fff;
-}
-
-.blog-post-meta {
-  display: flex;
-  gap: 20px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: #999;
-  margin-top: 20px;
-}
-
-.blog-date,
-.blog-author {
-  display: flex;
-  align-items: center;
 }
 
 .blog-post-body {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   line-height: 1.8;
-  color: #e0e0e0;
+  color: #eee;
 }
 
 /* Markdown content styling */
@@ -193,11 +194,11 @@
 /* Responsive */
 @media (max-width: 768px) {
   .blog-post-container {
-    padding: 100px 15px 60px;
+    padding: 100px 10px 60px;
   }
 
   .blog-post-article {
-    padding: 40px 30px;
+    padding: 20px 10px;
   }
 
   .blog-post-title {
