@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../../assets/Header/logo.png'
 import './Header.css'
 
 const Header = () => {
@@ -47,7 +48,7 @@ const Header = () => {
       <Link to="/" className="logoLink" onClick={closeMenu}>
         <img
           className="headerLogo"
-          src="../src/assets/Header/logo.png"
+          src={logo}
           alt="Logo"
         />
       </Link>

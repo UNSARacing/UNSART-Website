@@ -43,24 +43,20 @@
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   color: #fff;
+  padding-left: 12px;
+  border-left: 3px solid transparent;
 }
 
-.square {
-  width: 12px;
-  height: 12px;
-  display: inline-block;
+.meta-date {
+  border-left-color: #FFD700;
 }
 
-.yellow-square {
-  background-color: #FFD700;
-}
-
-.blue-square {
-  background-color: #016FAA;
+.meta-author {
+  border-left-color: #016FAA;
 }
 
 .blog-post-header {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .blog-post-title {
@@ -194,11 +190,22 @@
 /* Responsive */
 @media (max-width: 768px) {
   .blog-post-container {
-    padding: 100px 10px 60px;
+    padding: 100px 0 60px;
   }
 
   .blog-post-article {
-    padding: 20px 10px;
+    padding: 0;
+  }
+
+  .blog-post-featured-image {
+    max-height: 400px;
+    margin-bottom: 30px;
+  }
+
+  .blog-post-header,
+  .blog-post-meta-new,
+  .blog-post-body {
+    padding: 0 20px;
   }
 
   .blog-post-title {
@@ -215,11 +222,6 @@
 
   .blog-post-body h2 {
     font-size: 24px;
-  }
-
-  .blog-post-meta {
-    flex-direction: column;
-    gap: 10px;
   }
 }
 

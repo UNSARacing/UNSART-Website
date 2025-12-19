@@ -1,14 +1,14 @@
 // Utility to load markdown files
-// Import all markdown files statically
-import teamLaunch2024 from '../posts/team-launch-2024.md?raw';
-import firstCarDesign from '../posts/first-car-design.md?raw';
-import sponsorPartnership from '../posts/sponsor-partnership.md?raw';
+// Import all markdown files dynamically from the posts directory
+const modules = import.meta.glob('../posts/*.md', { query: '?raw', eager: true });
 
-const markdownFiles = {
-  'team-launch-2024': teamLaunch2024,
-  'first-car-design': firstCarDesign,
-  'sponsor-partnership': sponsorPartnership,
-};
+// Map the modules to a cleaner object keyed by filename (slug)
+const markdownFiles = Object.keys(modules).reduce((acc, path) => {
+  // Extract filename from path (e.g., "../posts/my-post.md" -> "my-post")
+  const slug = path.split('/').pop().replace('.md', '');
+  acc[slug] = modules[path].default || modules[path];
+  return acc;
+}, {});
 
 export const getMarkdownContent = (slug) => {
   return markdownFiles[slug] || null;

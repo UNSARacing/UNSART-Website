@@ -6,6 +6,8 @@ import { blogPosts } from '../../data/blogPosts';
 import { getMarkdownContent } from '../../utils/loadMarkdown';
 import './BlogPost.css';
 
+const images = import.meta.glob('../../assets/Home/*.{jpg,png,webp}', { eager: true });
+
 const BlogPost = () => {
   const { slug } = useParams();
   const [content, setContent] = useState('');
@@ -60,30 +62,34 @@ const BlogPost = () => {
     });
   };
 
+  const getPostImage = (post) => {
+    if (!post.image) return null;
+    const relativePath = post.image.replace('../src/', '../../');
+    return images[relativePath]?.default || null;
+  };
+
   return (
     <div className="blog-post-container">
       <div className="blog-post-content">
         <article className="blog-post-article">
           {post.image && (
             <div className="blog-post-featured-image">
-              <img src={post.image} alt={post.title} />
+              <img src={getPostImage(post)} alt={post.title} />
             </div>
           )}
+          <header className="blog-post-header">
+            <h1 className="blog-post-title">{post.title}</h1>
+          </header>
 
           <div className="blog-post-meta-new">
-            <div className="meta-item">
-              <span className="square yellow-square"></span>
+            <div className="meta-item meta-date">
               <span className="blog-date">{formatDate(post.date)}</span>
             </div>
-            <div className="meta-item">
-              <span className="square blue-square"></span>
+            <div className="meta-item meta-author">
               <span className="blog-author">By {post.author}</span>
             </div>
           </div>
 
-          <header className="blog-post-header">
-            <h1 className="blog-post-title">{post.title}</h1>
-          </header>
 
           <div className="blog-post-body">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>

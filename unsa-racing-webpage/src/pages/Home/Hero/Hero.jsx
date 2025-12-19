@@ -1,3 +1,6 @@
+import vfsaaLivery from '../../../assets/Home/vfsaa livery image.webp'
+import vfsaaLiveryTransparent from '../../../assets/Home/vfsaa livery image transparent.webp'
+import hoverImage from '../../../assets/Home/hoverImage.png'
 import './Hero.css'
 
 const Hero = () => {
@@ -6,13 +9,13 @@ const Hero = () => {
 
             <img
                 className="homeBackgroundImage"
-                src="../src/assets/Home/vfsaa livery image.webp"
+                src={vfsaaLivery}
                 alt="Garage"
             />
             
             <img
                 className="homeForegroundImage"
-                src="../src/assets/Home/vfsaa livery image transparent.webp"
+                src={vfsaaLiveryTransparent}
                 alt="Car Foreground"
             />
 
@@ -22,7 +25,7 @@ const Hero = () => {
                 {/* OVO MORA BITI POSLIJE WRAPPERA */}
                 <img
                     className="hoverImage"
-                    src="../src/assets/Home/hoverImage.png"
+                    src={hoverImage}
                     alt="Team"
                 />
             </div>

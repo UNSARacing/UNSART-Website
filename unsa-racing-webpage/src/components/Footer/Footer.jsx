@@ -1,5 +1,6 @@
-import './Footer.css';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/Header/logo.png';
+import './Footer.css';
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-header">
           <div className="footer-logo-section">
-           <img src="../src/assets/Header/logo.png" alt="UNSA Racing Team" className="footer-logo" />
+           <img src={logo} alt="UNSA Racing Team" className="footer-logo" />
             <h3 className="footer-title">UNSA Racing Team</h3>
           </div>
         </div>

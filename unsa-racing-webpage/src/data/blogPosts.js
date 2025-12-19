@@ -16,7 +16,7 @@ export const blogPosts = [
     date: '2024-09-15',
     author: 'Kemal Becarevic',
     excerpt: 'Ovo je primjer nekog blog posta 2',
-    image: '../src/assets/Home/team-photo2.jpg'
+    image: '../src/assets/Home/team-photo2.webp'
   },
 ];
 

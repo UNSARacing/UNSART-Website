@@ -1,3 +1,5 @@
+import teamPhoto2 from '../../../assets/Home/team-photo2.webp'
+import carPhoto from '../../../assets/Home/car-photo.png'
 import './Team.css';
 
 const Team = () => {
@@ -12,7 +14,7 @@ const Team = () => {
           <div className="content-left">
             <div className="team-image-container">
               <img 
-                src="../src/assets/Home/team-photo2.jpg"
+                src={teamPhoto2}
                 alt="UNSA Racing Team"
                 className="team-photo"
               />
@@ -51,7 +53,7 @@ const Team = () => {
 
             <div className="info-image-container">
               <img 
-                src="../src/assets/Home/car-photo.png"
+                src={carPhoto}
                 alt="Formula Student Car"
                 className="car-photo"
               />

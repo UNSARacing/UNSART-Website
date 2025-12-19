@@ -63,12 +63,20 @@
     font-size: 4rem;
     margin-top: 0px;
   }
+  
+  .sps-img {
+    max-height: 150px;
+  }
 }
 
 @media (max-width: 480px) {
   .sps-title {
     margin-bottom: 40px;
     font-size: 3rem;
+  }
+
+  .sps-img {
+    max-height: 100px;
   }
 }
 

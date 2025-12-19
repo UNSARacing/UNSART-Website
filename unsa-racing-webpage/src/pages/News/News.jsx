@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { blogPosts } from '../../data/blogPosts';
 import './News.css';
 
+const images = import.meta.glob('../../assets/Home/*.{jpg,png,webp}', { eager: true });
+
 const News = () => {
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -17,6 +19,14 @@ const News = () => {
     new Date(b.date) - new Date(a.date)
   );
 
+  const getPostImage = (post) => {
+    if (!post.image) return images['../../assets/Home/team-photo.jpg']?.default;
+    
+    // Convert e.g. "../src/assets/Home/team-photo.jpg" to "../../assets/Home/team-photo.jpg"
+    const relativePath = post.image.replace('../src/', '../../');
+    return images[relativePath]?.default || images['../../assets/Home/team-photo.jpg']?.default;
+  };
+
   return (
     <div className="news-page">
       <div className="news-container">
@@ -29,7 +39,7 @@ const News = () => {
             <Link key={post.id} to={`/news/${post.id}`} className="blog-post-card">
               <div className="post-image-container">
                 <img 
-                  src={post.image || '../src/assets/Home/team-photo.jpg'} 
+                  src={getPostImage(post)} 
                   alt={post.title}
                   className="post-image"
                 />
