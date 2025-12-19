@@ -10,7 +10,7 @@ import './App.css'
 function App() {
 
   return (
-    <Router basename="/UNSART-Website">
+    <Router>
       <ScrollToTop />
       <Header />
       <Routes>
